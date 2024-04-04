@@ -27,13 +27,8 @@ public class CustomerController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Customer>> getAllCustomers() {
-        List<Customer> customers = customerService.getAllCustomers();
-        if (!customers.isEmpty()) {
-            return ResponseEntity.ok(customers);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+    public String apiCheck() {
+       return "Api working successfully";
     }
 
     @GetMapping("/{customer_ID}")
